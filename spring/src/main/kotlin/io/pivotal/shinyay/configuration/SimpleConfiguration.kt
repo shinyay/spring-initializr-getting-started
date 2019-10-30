@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.core.task.TaskExecutor
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor
+import javax.annotation.PreDestroy
 
 @Configuration
 class SimpleConfiguration {
@@ -22,7 +23,12 @@ class SimpleConfiguration {
         taskExecutor.initialize()
 
         logger.info(taskExecutor.toString())
-        
+
         return taskExecutor
+    }
+
+    @PreDestroy
+    fun destroy() {
+        logger.info("Shutdown Initiated")
     }
 }
