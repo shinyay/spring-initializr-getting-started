@@ -1,0 +1,15 @@
+management:
+  metrics:
+    enable:
+      root: true
+      jvm: true
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    shutdown:
+      enabled: true
+spring:
+  main:
+    allow-bean-definition-overriding: true
