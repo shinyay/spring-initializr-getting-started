@@ -1,3 +1,13 @@
+spring:
+  profiles:
+    active: dev
+
+---
+
+spring:
+  profiles: dev
+  main:
+    allow-bean-definition-overriding: true
 management:
   metrics:
     enable:
@@ -10,6 +20,22 @@ management:
   endpoint:
     shutdown:
       enabled: true
+
+---
+
 spring:
+  profiles: prod
   main:
     allow-bean-definition-overriding: true
+management:
+  metrics:
+    enable:
+      root: true
+      jvm: true
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    shutdown:
+      enabled: false
