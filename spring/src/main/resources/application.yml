@@ -13,6 +13,10 @@ management:
     enable:
       root: true
       jvm: true
+    export:
+      influx:
+        enabled: true
+        uri: "http://localhost:8086"
   endpoints:
     web:
       exposure:
