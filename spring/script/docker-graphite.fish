@@ -2,7 +2,6 @@
 
 docker run --rm -d \
  --name graphite \
- --restart=always \
  -p 80:80 \
  -p 2003-2004:2003-2004 \
  -p 2023-2024:2023-2024 \
