@@ -17,6 +17,9 @@ management:
       influx:
         enabled: true
         uri: "http://localhost:8086"
+      graphite:
+        host: 127.0.0.1
+        port: 2004
   endpoints:
     web:
       exposure:
