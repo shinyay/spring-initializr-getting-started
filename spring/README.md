@@ -29,6 +29,7 @@ management:
 ```
 
 ### Prometheus
+- [Micrometer Prometheus](https://micrometer.io/docs/registry/prometheus)
 
 ```
 $ docker run --rm -d \
@@ -86,6 +87,8 @@ docker run --rm -d \
  -p 3000:3000 \
  grafana/grafana:6.4.4
 ```
+
+- user/password : `admin/admin`
 
 ## Demo
 
