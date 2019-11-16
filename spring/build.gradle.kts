@@ -22,6 +22,7 @@ dependencies {
 	implementation("org.webjars:bootstrap:4.3.1")
 	implementation("org.webjars:jquery:3.4.1")
 	implementation("io.micrometer:micrometer-registry-prometheus:latest.release")
+	implementation("io.micrometer:micrometer-registry-graphite:1.3.1")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
