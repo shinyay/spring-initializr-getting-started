@@ -28,7 +28,55 @@ management:
         uri: "http://localhost:8086"
 ```
 
+### Prometheus
 
+```
+$ docker run --rm -d \
+--name=prometheus \
+-p 9090:9090 \
+-v (pwd)/prometheus.yml:/etc/prometheus/prometheus.yml \
+prom/prometheus:v2.13.1 \
+--config.file=(pwd)/prometheus.yml
+```
+
+- prometheus.yml
+```yaml
+scrape_configs:
+  - job_name: 'spring-actuator'
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: ['127.0.0.1:8080']
+```
+
+```
+implementation("io.micrometer:micrometer-registry-prometheus:latest.release")
+```
+
+### Metrics Database: Graphite
+
+```
+docker run --rm -d \
+ --name graphite \
+ -p 80:80 \
+ -p 2003-2004:2003-2004 \
+ -p 2023-2024:2023-2024 \
+ -p 8125:8125/udp \
+ -p 8126:8126 \
+ graphiteapp/graphite-statsd:1.1.6-1
+```
+
+```
+implementation("io.micrometer:micrometer-registry-graphite:1.3.1")
+```
+
+```yaml
+management:
+  metrics:
+    export:
+      graphite:
+        host: 127.0.0.1
+        port: 2004
+```
 
 ## Demo
 
