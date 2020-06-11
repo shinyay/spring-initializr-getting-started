@@ -6,10 +6,10 @@ set -g ARTIFACT_ID spring-boot-demo
 set -g NAME $ARTIFACT_ID
 set -g DESCRIPTION "Sample project for Spring Boot"
 set -g PACKAGE $GROUP_ID
-set -g DEPENDENCY web,actuator,thymeleaf
+set -g DEPENDENCY web,actuator
 
 curl https://start.spring.io/starter.zip --create-dirs -o ./spring/spring.zip \
-#        -d bootVersion=2.3.0.M4 \
+        -d bootVersion=2.3.0.RELEASE \
 	-d type=gradle-project \
 	-d language=kotlin \
 	-d groupId=$GROUP_ID \
