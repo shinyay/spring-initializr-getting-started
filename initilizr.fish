@@ -6,7 +6,7 @@ set -g ARTIFACT_ID spring-boot-demo
 set -g NAME $ARTIFACT_ID
 set -g DESCRIPTION "Sample project for Spring Boot"
 set -g PACKAGE $GROUP_ID
-set -g DEPENDENCY web,actuator,
+set -g DEPENDENCY web,actuator
 
 curl https://start.spring.io/starter.zip --create-dirs -o ./spring/spring.zip \
         -d bootVersion=2.3.1.RELEASE \
