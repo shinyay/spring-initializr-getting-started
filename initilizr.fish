@@ -9,7 +9,7 @@ set -g PACKAGE $GROUP_ID
 set -g DEPENDENCY web,actuator
 
 curl https://start.spring.io/starter.zip --create-dirs -o ./spring/spring.zip \
-        -d bootVersion=2.3.1.RELEASE \
+        -d bootVersion=2.3.2.RELEASE \
 	-d type=gradle-project \
 	-d language=kotlin \
 	-d groupId=$GROUP_ID \
